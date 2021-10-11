@@ -1,0 +1,7 @@
+MAIN    START
+        OUT     MSG,LEN
+        RET
+;
+MSG     DC      'hello',#A
+LEN     DC      6
+        END
