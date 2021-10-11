@@ -1,5 +1,6 @@
 fibo:
   cmp r0, #2
+  mov r0, #1
   bxls lr
   push {r4, r5, lr}
   mov r0, r4
