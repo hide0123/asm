@@ -1,19 +1,22 @@
+  .global fibo
+  .type %function
 fibo:
   cmp r0, #2
-  mov r0, #1
-  bxls lr
+  movlt r0, #1
+  bxlt lr
   push {r4, r5, lr}
-  mov r0, r4
+  mov r5, r0
   sub r0, #2
   bl fibo
-  mov r5, r0
-  sub r0, r4, #1
+  mov r4, r0
+  sub r0, r5, #1
   bl fibo
-  mov r1, r5
-  add r0, r1
+  add r0, r4
   pop {r4, r5, lr}
   bx lr
- 
+
+  .global main
+  .type %function
 main:
   push {lr}
   mov r0, #10
@@ -23,6 +26,6 @@ main:
   bl printf
   pop {lr}
   bx lr
-  
-.data
+
+  .data
 Fmt: .asciz "%d\n"
