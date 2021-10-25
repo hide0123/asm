@@ -1,5 +1,5 @@
   .global fibo
-  .type %function
+  .type fibo, %function
 fibo:
   cmp r0, #2
   movlt r0, #1
@@ -16,7 +16,7 @@ fibo:
   bx lr
 
   .global main
-  .type %function
+  .type main, %function
 main:
   push {lr}
   mov r0, #10
